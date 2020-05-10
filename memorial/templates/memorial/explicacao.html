@@ -1,0 +1,18 @@
+{% extends 'memorial/base.html' %}
+
+{% block content %}
+    <div class="content">
+        <h2>Cerimônia</h2>
+
+        <p>Evento virtual para familiares e amigos que queiram homenagear a pessoa querida, um momento para reflexão e contemplação.</p>
+
+        <h2>Comunhão</h2>
+
+        <p>Encontro virtual para compartilhamento e escuta.</p>
+
+        <h2>Memorial</h2>
+        <p>Registro de lembranças sobre a pessoa querida</p>    
+        
+            <a class="btn btn-light" href="{% url 'account_signup' %}">Prosseguir</a>
+    </div>
+{% endblock %}

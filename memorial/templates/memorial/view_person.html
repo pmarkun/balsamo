@@ -1,0 +1,27 @@
+{% extends 'memorial/base.html' %}
+
+{% block content %}
+    <div>
+        <h2>{{person.name}}</h2>
+        <ul>
+            <li>Nasceu em {{person.birth}}</li>
+            <li>Morreu em {{person.death}}</li>
+        </ul>
+
+        <p>{{person.bio}}</p>
+    </div>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div>
+        {% for m in memories %}
+            <p>{{m.memory}}</p>
+            <hr />
+        {% endfor %}
+    </div>
+{% endblock %}

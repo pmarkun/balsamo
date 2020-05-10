@@ -1,0 +1,21 @@
+{% extends 'memorial/base.html' %}
+
+{% block content %}
+
+<div>
+    <h2>Cadastre a vítima</h2>
+    <form action="/add/person" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Submit">
+    </form>
+</div>
+<div>
+    <h2>Pessoas cadastradas</h2>
+        <ul>
+    {% for p in person %}
+        <li><a href="{% url 'view_person' p.slug %}">{{p.name}}</a></li> 
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

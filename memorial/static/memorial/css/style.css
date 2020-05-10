@@ -1,0 +1,26 @@
+body {
+    background-color: #eee;
+}
+
+header {
+    text-align: center;
+    padding:2em;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+#index {
+    padding-top:20%;
+    padding-right:5em;
+}
+
+#index button {
+    margin-top:2em;
+}
+
+.right {
+    text-align: right;
+}
