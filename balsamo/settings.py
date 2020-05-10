@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,9 @@ SECRET_KEY = 'n*0c+we)@jd^!^%5wti@b1(1g7@8e5ic7vsah80%85k0ut#(+u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS',
+                       cast=Csv(lambda x: x.strip().strip(',').strip()),
+                       default='*')
 
 
 # Application definition
