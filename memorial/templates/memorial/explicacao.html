@@ -2,17 +2,15 @@
 
 {% block content %}
     <div class="content">
-        <h2>Cerimônia</h2>
+            <p>Fazer um ritual de despedida remoto foi a possibilidade que encontramos diante o isolamento. Fizemos uma coletânea com algumas sugestões que podem contribuir de alguma forma neste momento tão sensível diante a perda. Assim, você pode optar por:</p>
 
-        <p>Evento virtual para familiares e amigos que queiram homenagear a pessoa querida, um momento para reflexão e contemplação.</p>
+            <ul>
+                <li><a class='' href="{% url 'page' page='cerimonia' %}">Cerimônia</a>: um evento para amigos e familiares como uma possibilidade para reflexão e contemplação.</li>
 
-        <h2>Comunhão</h2>
+                <li><a class='' href="{% url 'page' page='comunhao' %}">Comunhão</a>: encontro virtual para compartilhamento de recordações, sentimentos, escuta e acolhimento mútuo.</li>
 
-        <p>Encontro virtual para compartilhamento e escuta.</p>
-
-        <h2>Memorial</h2>
-        <p>Registro de lembranças sobre a pessoa querida</p>    
-        
-            <a class="btn btn-light" href="{% url 'account_signup' %}">Prosseguir</a>
+                <li><a class='' href="{% url 'account_signup' %}">Memorial</a>: espaço para registro da memória da pessoa querida.</li>
+            </ul>
+    
     </div>
 {% endblock %}
