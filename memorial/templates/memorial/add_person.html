@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-    <h2>Cadastre a vítima</h2>
+    <h2>Conte-nos sobre a pessoa querida</h2>
     <form action="/add/person" method="post">
         {% csrf_token %}
         {{ form.as_p }}
