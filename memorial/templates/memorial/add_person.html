@@ -1,21 +1,52 @@
 {% extends 'memorial/base.html' %}
 
 {% block content %}
+    <div class="head">
+        <img src="/static/memorial/img/cultivo.svg" />
+        <span class="dot"></span>
+        <span>Memorial</span>
+        <span class="dot"></span>
 
-<div>
-    <h2>Conte-nos sobre a pessoa querida</h2>
-    <form action="/add/person" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-    <input type="submit" value="Submit">
-    </form>
-</div>
-<div>
-    <h2>Pessoas cadastradas</h2>
-        <ul>
-    {% for p in person %}
-        <li><a href="{% url 'view_person' p.slug %}">{{p.name}}</a></li> 
-    {% endfor %}
-    </ul>
-</div>
+    </div>
+    
+    <p class="center"><b> Espaço para homenagem da memória da pessoa querida.</b></p>
+
+    <p>Sabemos que nesse momento de perda, talvez, seja uma tarefa difícil se expressar por isso trouxemos algumas perguntas que podem te inspirar a homenagear a pessoa querida. </p>
+
+    <div class="perguntas-overlay">
+        <div class="perguntas">
+            <p>Qual a melhor forma de descrever a pessoa querida?</p>
+            <p>Quando você pensa na pessoa querida o que te vem à cabeça?</p>
+            <p>O que você aprendeu com a pessoa querida?</p>
+            <p>Qual a melhor lembrança você guarda?</p>
+            <p>Como a pessoa querida te inspirou?</p>
+        </div>
+    </div>
+
+    <p>Reiteramos que as perguntas são norteadoras, mas pode ser que com elas, você experimente afetos que ainda não tenha se dado conta neste momento tão difícil. Se isso acontecer, sinta-se livre para colocá-los para fora a medida que conseguir. </p>
+
+    <p>Sugerimos que se você tem afinidade com alguma expressão artística, seja ela gráfica, colagem, audiovisual, literária ou qualquer outra, reserve um momento íntimo na sua casa para se utilizar de alguma delas como forma de expressão. Como falamos, esse “espaço desabafo” não se limita aqui. </p>
+
+    
+    <div class="addperson">
+        <h2>Conte-nos sobre a pessoa querida</h2>
+        <form action="/add/person" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+
+    
+    {% if person %}
+    <div class="memoriais">
+        <h2>visite os memoriais</h2>
+            <ul>
+        {% for p in person %}
+            <li><a href="{% url 'view_person' p.slug %}">{{p.name}}</a></li> 
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 {% endblock %}

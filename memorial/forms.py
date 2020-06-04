@@ -15,6 +15,8 @@ class PersonForm(forms.ModelForm):
                 "class": "",
             }
         ),
+        #input_formats='%d/%m/%Y',
+
         #initial=datetime.datetime.today,
         # required=False,
         # label=_("birth date"),
@@ -29,7 +31,7 @@ class PersonForm(forms.ModelForm):
             }
         ),
         initial=datetime.datetime.today,
-        input_formats='%d/%m/%Y',
+        #input_formats='%d/%m/%Y',
 
         # required=False,
         # label=_("birth date"),

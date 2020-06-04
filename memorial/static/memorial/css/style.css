@@ -1,31 +1,203 @@
 body {
     background-color: #eee;
+    background: url('/static/memorial/img/cerimonia.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: Domine, serif;
+    color: #433A49;
+    font-size:1.1em;
+}
+
+a {
+    color: #6C8D93;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #6C8D93;
+}
+
+.index {
+    background-image:  url('/static/memorial/img/bg.jpg');
 }
 
 header {
     text-align: center;
-    padding:2em;
+    padding:1em;
+    background-color: #e7f0f4;
 }
 
-#logo {
-    width: 100px;
-    height: 100px;
+.logo, .logo img {
+    width: 50px;
+    height: 50px;
+    margin:0 auto;
 }
 
-#index {
-    padding-top:20%;
-    padding-right:5em;
+.navbar {
+    position: relative;
+}
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -25px !important;  /* 50% of your logo width */
+    display: block;
+}
+
+.container {
+    padding:0 5em 0 5em;
+}
+
+.content {
+    padding-top:2em;
     text-align: justify;
 }
 
-#index button {
+.index .content {
+    text-align: center;
+}
+
+.index #balsamo {
+    display:flex;
+    height:8em;
+}
+.index #balsamo img {
+    margin:0 auto;
+}
+
+.index button {
     margin-top:2em;
 }
 
 #linkbar {
+    padding:2em 0 2em 0;
     text-align: center;
 }
 
 .right {
     text-align: right;
 }
+
+.cerimonia {
+    font-size: 1.2em;
+    color: #93899B;
+
+}
+
+.cerimonia a {
+}
+
+.cerimonia .item {
+    text-align: justify;
+    margin:0 auto;
+}
+
+.head {
+    font-size:1.4em;
+    text-align: center;
+    padding:0.3em;
+}
+
+.head a {
+    display:block;    
+}
+
+.perguntas-overlay {
+    background: #433A49 0% 0% no-repeat padding-box;
+    padding:2em;
+    color:#fff;
+    font-weight: bold;
+    margin:2em 0 2em 0;
+    opacity: 0.8;
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+}
+
+.perguntas {
+    display: block;
+    width:50%;
+    margin:auto;
+
+}
+.perguntas p {
+    opacity:1;
+}
+
+.addperson, .comment {
+    text-align: center;
+    color: #6C8D93;
+    padding:2em 0 2em 0;
+}
+
+.addperson label {
+    display:block;
+    font-size:0.8em;
+}
+
+.addperson input, .addperson textarea, .comment input, .comment textarea {
+    width:50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #433A49;
+    border-radius: 5px;
+}
+
+.addperson input[type=submit], .comment input[type=submit] {
+    background: #433A49 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 1;
+    padding:0.8em 0 0.8em 0;
+}
+
+.memoriais {
+    text-align: center;
+}
+
+.memoriais li {
+    list-style: none;
+}
+
+.obito {
+    font-size: 0.8em;
+}
+
+.comment .errorlist, .comment label {
+    display:none;
+}
+
+.memories {
+    background: #93899B 0% 0% no-repeat padding-box;
+    color:#fff;
+    padding:4em 0 4em 0;
+}
+
+.memories h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.memory {
+    width:60%;
+    margin:0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    background-color: #6C8D93;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .errorlist li {
+      color:#900;
+  }

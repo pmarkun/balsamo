@@ -134,3 +134,4 @@ STATIC_ROOT = BASE_DIR+'/static/'
 #All Auth
 
 LOGIN_REDIRECT_URL = '/add/person'
+ACCOUNT_EMAIL_VERIFICATION='none'

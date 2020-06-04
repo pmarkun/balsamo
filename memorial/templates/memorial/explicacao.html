@@ -1,16 +1,35 @@
 {% extends 'memorial/base.html' %}
 
+{% block body_class %}cerimonia{% endblock %}
 {% block content %}
-    <div class="content">
             <p>Fazer um ritual de despedida remoto foi a possibilidade que encontramos diante o isolamento. Fizemos uma coletânea com algumas sugestões que podem contribuir de alguma forma neste momento tão sensível diante a perda. Assim, você pode optar por:</p>
+            <p>&nbsp;</p>
 
-            <ul>
-                <li><a class='' href="{% url 'page' page='cerimonia' %}">Cerimônia</a>: um evento para amigos e familiares como uma possibilidade para reflexão e contemplação.</li>
+            <div class="item">
+                <div class="head">
+                    <img src="/static/memorial/img/cultivo.svg" />
+                    <a class='' href="{% url 'page' page='cerimonia' %}">Cerimônia</a>
+                </div>
+                <p>Evento virtual para familiares e amigos que queiram homenagear a pessoa querida, um momento para reflexão e contemplação.</p>
+            </div>
 
-                <li><a class='' href="{% url 'page' page='comunhao' %}">Comunhão</a>: encontro virtual para compartilhamento de recordações, sentimentos, escuta e acolhimento mútuo.</li>
-
-                <li><a class='' href="{% url 'add_person' %}">Memorial</a>: espaço para registro da memória da pessoa querida.</li>
-            </ul>
+            <div class="item">
+                <div class="head"><img src="/static/memorial/img/cultivo.svg" />
+                <a class='' href="{% url 'page' page='comunhao' %}">Comunhão</a>    
+                </div>
+                
+                <p>Encontro virtual para conversa e compartilhamento de recordações, sentimentos, escuta e acolhimento mútuo.</p>
+            </div>
+            
+            
+            <div class="item">
+                    <div class="head"><img src="/static/memorial/img/cultivo.svg" />
+                        <a class='' href="{% url 'add_person' %}">Memorial</a>    
+                    </div>
+                    <p>Espaço para homenagem da memória da pessoa querida.</p>
+            </div>
     
-    </div>
+            <p>Este é um local para expressão do luto, uma possibilidade de criação de rituais de comunhão remoto para conforto e alívio na despedida de pessoas queridas vítimas do coronavírus.</p>
+
+            <p>Se você perdeu uma pessoa querida vítima de covid, faça parte.</p>
 {% endblock %}

@@ -1,35 +1,40 @@
 {% extends 'memorial/base.html' %}
 
 {% block content %}
-    <div>
-        <h2>{{person.name}}</h2>
-        <p>({{person.birth}} - {{person.death}})</p>
+        <div class="info">
+            <h2><strong>{{person.name}}</strong></h2>
+            <p class="obito">{{person.birth}} - {{person.death}}</p>
 
-        <p>{{person.bio}}</p>
-    </div>
-    <hr />
-    <div>
-        <p>Deixe aqui uma recordação sobre essa pessoa:</p>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-        <input type="submit" value="Enviar">
-        </form>
-    </div>
+            <p>{{person.bio}}</p>
+        </div>
 
-    {% if memories %}
-    <div>
-        <h3>Memórias</h3>
-        {% for m in memories %}
-            <p>{{m.memory}}</p>
-            <hr />
-        {% endfor %}
-    
-    </div>
-    {% endif %}
+        <div class="comment">
+            <p><strong>Deixe aqui uma recordação sobre essa pessoa:</strong></p>
+            
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <input type="submit" value="Enviar">
+            </form>
+        </div>
 
-    {% block linkbar %}
-        {% include 'memorial/linkbar.html' %}
-    {% endblock %}
-    
+        {% if memories %}
+        <div class="memories">
+            <div class="head">
+                <h2>Memórias</h2>
+                <img src="/static/memorial/img/cultivow.svg" />
+            </div>
+
+            {% for m in memories %}
+            <div class="memory">    
+                <b>{{m.user.first_name}} {{m.user.last_name}}</b><p>{{m.memory}}</p>
+            </div>
+            {% endfor %}
+        
+        </div>
+        {% endif %}
+
+        {% block linkbar %}
+            {% include 'memorial/linkbar.html' %}
+        {% endblock %}
 {% endblock %}
