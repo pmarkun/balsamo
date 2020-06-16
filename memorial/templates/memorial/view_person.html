@@ -27,7 +27,11 @@
 
             {% for m in memories %}
             <div class="memory">    
-                <b>{{m.user.first_name}} {{m.user.last_name}}</b><p>{{m.memory}}</p>
+                <p>{{m.memory|linebreaks}}</p>
+                <i class="user">{% if m.user.first_name %}--{% endif %} {{m.user.first_name}} {{m.user.last_name}}</i>
+                {% if perms.memorial.delete_memory %}
+                    (<a href="{% url 'memory_delete' pk=m.id %}">delete</a>)
+                {% endif %}
             </div>
             {% endfor %}
         

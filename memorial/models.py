@@ -38,6 +38,9 @@ class Memory(models.Model):
     memory = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_('Host'))
 
+    def __str__(self):
+        return self.memory
+
 
 class Picture(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE, verbose_name=_('Person'))

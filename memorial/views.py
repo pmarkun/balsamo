@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .forms import PersonForm, MemoryForm
 from .models import Person, Memory
 from django.urls import reverse
+from django.core.exceptions import PermissionDenied
+from django.views.generic import DeleteView
 
 
 # Create your views here.
@@ -11,6 +13,15 @@ def index(request):
 
 def page(request, page):
     return render(request, 'memorial/'+page+'.html')
+
+
+class PermissionMixin(object):
+    def get_object(self, *args, **kwargs):
+        obj = super(PermissionMixin, self).get_object(*args, **kwargs)
+        if not obj.user == self.request.user:
+            raise PermissionDenied()
+        else:
+            return obj
 
 def add_person(request):
     if request.user.is_anonymous:
@@ -52,3 +63,12 @@ def view_person(request, person):
         form = MemoryForm({'person' : p})
 
     return render(request, 'memorial/view_person.html', context={'form' : form, 'person' : p, 'memories' : memories})
+
+
+class MemoryDelete(DeleteView):
+    model = Memory
+    
+    def get_success_url(self):
+    # Assuming there is a ForeignKey from Comment to Post in your model
+        person = self.object.person
+        return reverse( 'view_person', kwargs={'person': person.slug})
