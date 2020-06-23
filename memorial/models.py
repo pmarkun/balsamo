@@ -17,10 +17,10 @@ class Profile(models.Model):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=200)
-    birth = models.DateField()
-    death = models.DateField()
-    bio = models.TextField()
+    name = models.CharField(max_length=200, verbose_name=_('Name'))
+    birth = models.DateField(verbose_name=_('Birth'))
+    death = models.DateField(verbose_name=_('Death'))
+    bio = models.TextField(verbose_name=_('Bio'))
     slug = models.SlugField(editable=False, unique=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_('Host'))
 
