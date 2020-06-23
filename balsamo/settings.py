@@ -139,3 +139,4 @@ STATIC_ROOT = BASE_DIR+'/static/'
 
 LOGIN_REDIRECT_URL = '/add/person'
 ACCOUNT_EMAIL_VERIFICATION='none'
+ACCOUNT_SIGNUP_FORM_CLASS = 'memorial.forms.SignupForm'
